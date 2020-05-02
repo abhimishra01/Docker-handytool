@@ -56,6 +56,7 @@ elif ch=='N':
 		os.system("tput setaf 1")
 		print("For establishing a tunnel to generate a public url for your clients press 15")
 		print("\n")
+		os.system("systemctl disable firewalld")
 		os.system("tput setaf 7")
 		print("Type exit() to close the program")
 		service=input("Input Here from above choices ")
