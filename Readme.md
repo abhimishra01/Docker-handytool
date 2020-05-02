@@ -25,6 +25,35 @@ Some key services of this program
 
 An additional tool “ngrok” is also provided to use inside this program which takes input of the port number and protocol of the web application or website running on server.
 Through this the user can host his/her website to outside world by creating a tunnel with just one enter key pressed and the public url generated can be provided to the clients across the Globe eliminating issues of getting a domain or public url from ISP.
+
+Some Imp and default entities to be remembered while runnning the Ghost web application:
+* database__client: mysql
+* database__connection__host: db
+* database__connection__user: root
+* database__connection__password: example
+* database__connection__database: ghost
+
+#ports - 8080:2368
+
+* Mysql db image : mysql:5.7
+* MYSQL_ROOT_PASSWORD: example
+ 
+ 
+Some Imp and default entities to be remembered while runnning the Wordpress web application:
+* By default: 
+* MYSQL_ROOT_PASSWORD: rootpass
+* MYSQL_USER: abhi                                                
+* MYSQL_PASSWORD: redhat
+* MYSQL_DATABASE: mydb
+
+*ports: 8081:80
+ 
+* WORDPRESS_DB_HOST: dbos 
+* WORDPRESS_DB_USER: abhi
+* WORDPRESS_DB_PASSWORD: redhat
+* WORDPRESS_DB_NAME: mydb
+
+  
  
 Those who want some new services to be added or want to give feedback about the project Please Mail:-'abhisk.mhra@gmail.com' I WILL BE VERY GLAD!!
                                         Thank You for your visit on my repository!
