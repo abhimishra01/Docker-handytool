@@ -46,19 +46,15 @@ elif ch=='N':
 		os.system("tput setaf 1")
 		print("For connecting two running containers press 10")
 		os.system("tput setaf 2")
-		print("For launching Firefox GUI application on top of a container press 11")
-		os.system("tput setaf 6")
-		print("For launching Zenmap GUI on top of a container press 12")
-		os.system("tput setaf 5")
-		print("For running the WORDPRESS web application on top of docker container press 13")
+		print("For running the WORDPRESS web application on top of docker container press 11")
 		os.system("tput setaf 3")
-		print("For running the GHOST web application on top of docker container press 14")
+		print("For running the GHOST web application on top of docker container press 12")
 		os.system("tput setaf 4")
-		print("For stopping the GHOST web application press 15")
+		print("For stopping the GHOST web application press 13")
 		os.system("tput setaf 5")
-		print("For stopping the WORDPRESS web application press 16")
+		print("For stopping the WORDPRESS web application press 14")
 		os.system("tput setaf 1")
-		print("For establishing a tunnel to generate a public url for your clients press 17")
+		print("For establishing a tunnel to generate a public url for your clients press 15")
 		print("\n")
 		os.system("tput setaf 7")
 		print("Type exit() to close the program")
@@ -208,59 +204,24 @@ elif ch=='N':
 				True
 			else:
 				break
+
 	
 		elif int(service)==11:
-			os.system("tput setaf 6")
-			print("Please what a while, we are installing the dependencies..")
-			os.system("docker rm -f firefox_on_container")
-			os.system("docker run -dit --env='DISPLAY'  --name firefox_on_container centos")
-			os.system("docker start firefox_on_container")
-			os.system("docker exec firefox_on_container yum install firefox -y")
-			os.system("docker start firefox_on_container")
-			os.system("docker exec firefox_on_container firefox")
-			next=input("Do you want to continue using more services? Press y/N ")				
-			if next=='y':
-				True
-			else:
-				break
-		elif int(service)==12:
-			os.system("tput setaf 6")
-			print("Please what a while, we are installing the dependencies..")
-			os.system("docker rm -f zenmap_on_container")
-			os.system("docker run  -dit --env='DISPLAY' --net=host --name zenmap_on_container centos")
-			os.system("docker start zenmap_on_container")
-			os.system("docker exec zenmap_on_container yum install nmap-frontend -y ")		
-			os.system("docker start zenmap_on_container")
-			os.system("docker exec zenmap_on_container yum install nmap")
-			os.system("docker start zenmap_on_container")
-			os.system("docker exec zenmap_on_container yum install nmap-frontend")
-			os.system("docker start zenmap_on_container")
-			os.system("docker exec zenmap_on_container nmap-frontend")
-			next=input("Do you want to continue using more services? Press y/N ")				
-			if next=='y':
-				True
-			else:
-		 		break
-		elif int(service)==13:
-			os.system("tput setaf 3")
+			os.system("tput setaf 2")			
 			print("Please wait while we are installing the dependencies...")
 			os.system("docker pull wordpress:5.1.1-php7.3-apache")
-			os.system("docker pull mysql:5.7")			
-			os.system("mkdir Wordpress_infrastructure")			
+			os.system("docker pull mysql:5.7")					
+			os.system("mkdir wordpress_infrastructure")			
 			os.system("git init")
 			os.system("git clone https://github.com/Moonwalkerr/wordpress_in_container")
 			os.chdir("wordpress_in_container/")
 			os.system("docker-compose up")
-			os.system("yum install ngrok-stable-linux-amd64.zip -y")
-			os.system("unzip ngrok-stable-linux-amd64.zip -y")
-			os.system("./ngrok http 8081")
-			print("By using the url given in front of forwarding can be given to any of your clients across the internet to get access to your web app ghost!")
 			next=input("Do you want to continue using more services? Press y/N ")				
 			if next=='y':
 				True
 			else:
-				break
-		elif int(service)==14:
+				break	
+		elif int(service)==12:
 			os.system("tput setaf 2")			
 			print("Please wait while we are installing the dependencies...")
 			os.system("docker pull ghost:1-alpine")
@@ -275,7 +236,7 @@ elif ch=='N':
 				True
 			else:
 				break	
-		elif int(service)==15:
+		elif int(service)==13:
 			os.chdir("ghost_webapp_in_container/")
 			os.system("docker-compose stop")		
 			next=input("Do you want to continue using more services? Press y/N ")				
@@ -283,7 +244,7 @@ elif ch=='N':
 				True
 			else:
 				break
-		elif int(service)==16:
+		elif int(service)==14:
 			os.chdir("wordpress_in_container/")
 			os.system("docker-compose stop")
 			next=input("Do you want to continue using more services? Press y/N ")				
@@ -291,7 +252,7 @@ elif ch=='N':
 				True
 			else:
 				break	
-		elif int(service)==17:			
+		elif int(service)==15:			
 			os.system("yum install ngrok-stable-linux-amd64.zip -y")
 			os.system("unzip ngrok-stable-linux-amd64.zip ")	
 			print("To set a Tunnel for Ghost web application press 1 ")
