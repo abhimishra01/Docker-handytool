@@ -1,7 +1,7 @@
 import os
 os.system("clear")
 os.system("tput setaf 1")
-print(" Hey Fellas Docker As a Service is here to assist you in Docker Container applications, You can call this program as 'DAS' in short")
+print(" Hey Fellas DOCKER HANDY TOOL is here to assist you in Docker Container applications, even if you are a newbie to this technology")
 os.system("tput setaf 2")
 print(" ----------------------------------------------------------------------------------------------------------------------------------")
 os.system("tput setaf 1")
