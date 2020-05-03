@@ -216,7 +216,8 @@ elif ch=='N':
 			os.system("git init")
 			os.system("git clone https://github.com/Moonwalkerr/wordpress_in_container")
 			os.chdir("wordpress_in_container/")
-			os.system("docker-compose up")
+			os.system("docker-compose up -d")
+			print("Launch your web browser and go on this url:- localhost:8081")
 			next=input("Do you want to continue using more services? Press y/N ")				
 			if next=='y':
 				True
@@ -231,7 +232,8 @@ elif ch=='N':
 			os.system("git init")
 			os.system("git clone https://github.com/Moonwalkerr/ghost_webapp_in_container")
 			os.chdir("ghost_webapp_in_container/")
-			os.system("docker-compose up")
+			os.system("docker-compose up -d")
+			print("Launch your web browser and go on this url:- localhost:8080")
 			next=input("Do you want to continue using more services? Press y/N ")				
 			if next=='y':
 				True
