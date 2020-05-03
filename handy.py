@@ -218,6 +218,11 @@ elif ch=='N':
 			os.chdir("wordpress_in_container/")
 			os.system("docker-compose up -d")
 			print("Launch your web browser and go on this url:- localhost:8081")
+			i=input("If you want to stop the webapplication now you can press y otherwise you can run this handy tool anytime and stop the web app else press anything to proceed")
+			if i=='y'
+				os.system("docker-compose stop")
+			else
+				pass
 			next=input("Do you want to continue using more services? Press y/N ")				
 			if next=='y':
 				True
